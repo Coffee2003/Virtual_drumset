@@ -5,11 +5,13 @@ for (let i = 0; i < numberofdrums; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click",function () {
         var drum=this.innerHTML;
         makeSound(drum);
+        animation(drum);
     });
 }
 
 document.addEventListener("keydown",function (){
     makeSound(event.key);
+    animation(event.key);
 })
 
 
@@ -52,6 +54,14 @@ function makeSound(key) {
         default:
             break;
     }
+}
+
+function animation(key){
+    let btn=document.querySelector(.+"key");
+    btn.classList().add("pressed");
+    setTimeout(function (){
+        btn.classList.remove("pressed");
+    },100);
 }
 
 
